@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<div class="container bordered">
+    <div class=" col-md-2 pull-right">
+        <div id="streched sidebar-wrapper bordered">
+            <ul class="sidebar-nav nav navbar-nav streched">
+
+                <li class="streched"><a class="bordered clickable" id="news" title="http://rss.walla.co.il/feed/1?type=main">וואללה!חדשות</a> </li>
+                <li class="streched"><a class="bordered clickable" id="sport" title="http://rss.walla.co.il/feed/3?type=main">וואללה!ספורט</a> </li>
+                <li class="streched"><a class="bordered clickable" id="car" title="http://rss.walla.co.il/feed/31?type=main">וואללה!רכב</a> </li>
+                <li class="streched"><a class="bordered clickable" id="fashion" title="http://rss.walla.co.il/feed/24?type=main">וואללה!אופנה</a> </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4 pull-right" id="#content">
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <br />
+                <div class="bordered">@item.PubDate   </div>
+
+                <div class="bordered">@item.Title    </div>
+               
+                    <div class="thumbnail bordered">@Html.Raw(item.Description) </div>
+               
+                <br />
+
+
+                <hr />
+
+            }
+        }
+
+    </div>
+</div>
+
+
+
+
